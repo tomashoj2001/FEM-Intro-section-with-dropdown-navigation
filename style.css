@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: red 1px solid;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+    background-color: var(--Almost-White);
+    width: 100vw;
+    overflow: hidden;
+}
+
+a,
+p,
+.navbar button {
+    color: var(--Medium-Gray);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+        /* NAV BAR*/
+
+header {
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+}        
+
+.logo {
+    display: block;
+}
+
+.navbar {
+    height: 100vh;
+    width: 70%;
+    padding: 1rem;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    z-index: 5;
+    background-color: var(--Almost-White);
+    transition: all 0.5s ease;
+}
+
+.navbar__menu{
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.navbar__title {
+    margin: 2rem 0;
+    display: block;
+    width: fit-content;
+}
+
+.navbar__title.display-dropdown{
+    margin-bottom: 0;
+}
+
+.dropdown {
+    margin-left: 1rem;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: 1.2rem .75rem;
+    align-items: center;
+    transform: scaleY(0);
+    max-height: 0;
+    transition: all 0.3s ease
+}
+
+.dropdown img {
+    display: block;
+    height: 1.5rem;
+}
+
+.dropdown--2{
+    grid-template-columns: 1fr;
+}
+
+.navbar__arrow{
+    margin-left: 1.5rem;
+    transform: rotate(0);
+    transition: all 0.3s ease;
+}
+
+.navbar button {
+    width: 80%;
+    height: 2.5rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    border-radius: .75rem;
+    border: none;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    
+}
+
+button.navbar__login {
+    margin-bottom: 1rem;
+}
+
+button.navbar__register{
+    border: 2px solid var(--Medium-Gray);
+}
+
+.navbar button:hover {
+    color: var(--Almost-Black);
+    border-color: var(--Almost-Black);
+}
+
+
+        /* MAIN */
+main {
+    opacity: 1;
+    transition: 0.5s all ease;
+}
+
+.bg-picture {
+    width: 100%;
+    height: 76vw;
+    background-image: url(images/image-hero-mobile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main__title {
+    margin-top: 3rem;
+}
+
+.main__text {
+    margin: 2rem;
+}
+
+.main__btn {
+    color: var(--Almost-White);
+    background-color: var(--Almost-Black);
+    width: 150px;
+    height: 2.5rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: .75rem;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.main__btn:hover {
+    background-color: transparent;
+    color: var(--Almost-Black);
+    border: 2px solid var(--Almost-Black);
+}
+
+.main__clients{
+    margin: 3rem auto 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+        /* JAVASCRIPT */
+
+main {
+    text-align: center;
+}
+
+.navbar.active{
+    right: 0;
+}
+
+.display-dropdown.active + .dropdown {
+    transform: scaleY(1);
+    max-height: 500px;
+    margin-top: 1rem;
+}
+
+.display-dropdown.active > .navbar__arrow {
+    transform: rotate(180deg);
+}
+
+header.active ~ main {
+    opacity: 0.5;
+}
