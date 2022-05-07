@@ -66,6 +66,11 @@ header {
     margin: 2rem 0;
     display: block;
     width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.navbar__title:hover {
+    color: var(--Almost-Black);
 }
 
 .navbar__title.display-dropdown{
